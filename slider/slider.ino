@@ -779,7 +779,7 @@ void loop() {
 	// Serial.print(F(", "));
 	// Serial.println(F(""));
 
-	delay(500);
+	delay(200);
 }
 
 
