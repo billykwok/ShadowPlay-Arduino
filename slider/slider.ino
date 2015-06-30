@@ -712,8 +712,8 @@ void loop() {
 	double dT;
 	accel_t_gyro_union accel_t_gyro;
 
-	Serial.println(F(""));
-	Serial.println(F("MPU-6050"));
+	// Serial.println(F(""));
+	// Serial.println(F("MPU-6050"));
 
 	// Read the raw values.
 	// Read 14 bytes at once, 
@@ -722,8 +722,8 @@ void loop() {
 	// there is no filter enabled, and the values
 	// are not very stable.
 	error = MPU6050_read(MPU6050_ACCEL_XOUT_H, (uint8_t *) &accel_t_gyro, sizeof(accel_t_gyro));
-	Serial.print(F("Read accel, temp and gyro, error = "));
-	Serial.println(error, DEC);
+	// Serial.print(F("Read accel, temp and gyro, error = "));
+	// Serial.println(error, DEC);
 
 	// Swap all high and low bytes.
 	// After this, the registers values are swapped, 
@@ -741,8 +741,8 @@ void loop() {
 	SWAP (accel_t_gyro.reg.z_gyro_h, accel_t_gyro.reg.z_gyro_l);
 
 	// Print the raw acceleration values
-	Serial.print(F("accel Z: "));
-	Serial.print(accel_t_gyro.value.z_accel, DEC);
+	// Serial.print(F("accel Z: "));
+	// Serial.print(accel_t_gyro.value.z_accel, DEC);
 
 	BTSerial.print(accel_t_gyro.value.z_accel, DEC);
 	BTSerial.print(F("\n"));
@@ -753,7 +753,7 @@ void loop() {
 	// Serial.print(accel_t_gyro.value.y_accel, DEC);
 	// Serial.print(F(", "));
 	// Serial.print(accel_t_gyro.value.z_accel, DEC);
-	Serial.println(F(""));
+	// Serial.println(F(""));
 
 	// The temperature sensor is -40 to +85 degrees Celsius.
 	// It is a signed integer.
