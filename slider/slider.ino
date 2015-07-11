@@ -670,11 +670,11 @@ void setup() {
 	int error;
 	uint8_t c;
 
-	Serial.begin(9600);
+	Serial.begin(38400);
 	Serial.println(F("InvenSense MPU-6050"));
 	Serial.println(F("June 2012"));
 
-	BTSerial.begin(9600);
+	BTSerial.begin(38400);
 
 	// Initialize the 'Wire' class for the I2C-bus.
 	Wire.begin();
@@ -742,9 +742,10 @@ void loop() {
 
 	// Print the raw acceleration values
 	// Serial.print(F("accel Z: "));
-	// Serial.print(accel_t_gyro.value.z_accel, DEC);
+	Serial.print(accel_t_gyro.value.x_accel, DEC);
+	Serial.print(F("\n"));
 
-	BTSerial.print(accel_t_gyro.value.z_accel, DEC);
+	BTSerial.print(accel_t_gyro.value.x_accel, DEC);
 	BTSerial.print(F("\n"));
 
 	// Serial.print(F("accel x,y,z: "));

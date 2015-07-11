@@ -19,8 +19,8 @@ int contar = 0;
 String inData = "";
 
 void setup() {
-    BTSerial.begin(9600);
-    Serial.begin(9600);
+    BTSerial.begin(38400);
+    Serial.begin(115200);
     pinMode(DEBUG_PIN, OUTPUT);
 }
 
